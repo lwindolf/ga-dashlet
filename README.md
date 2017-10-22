@@ -28,8 +28,11 @@ You probably want to automatically start the script on each login.
 This can be done in many ways. One way is to add the following commands
 to your ~/.xprofile
 
-    (cd <INSTALL_PATH>/ && sleep 10 && ./ga-dashlet.py) &
+    (cd <INSTALL_PATH>/ && sleep 10 && GDK_BACKEND=x11 ./ga-dashlet.py) &
 
 Ensure to replace INSTALL_PATH with the correct installation directory!
 
-Note that the sleep is there to ensure the composite manager has started.
+Note that the sleep is there to ensure the composite manager has started
+and the GDK_BACKEND=x11 is needed to allow persistant window positioning
+on Wayland by falling back to X11 protocol as Wayland does not allow
+getting/setting the window position.

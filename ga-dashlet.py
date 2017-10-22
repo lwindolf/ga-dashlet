@@ -117,6 +117,8 @@ class MyWin (Gtk.Window):
     self.set_decorated(False)
     self.get_window().set_decorations(Gdk.WMDecoration.BORDER)
     self.get_window().set_type_hint(Gdk.WindowTypeHint.UTILITY)
+    self.set_skip_taskbar_hint(True)
+    self.set_skip_pager_hint(True)
 
     (self.service, self.profile) = ga_auth()
     self.update(None)
