@@ -28,7 +28,7 @@ You probably want to automatically start the script on each login.
 This can be done in many ways. One way is to add the following commands
 to your ~/.xprofile
 
-    (cd <INSTALL_PATH>/ga-dashlet && sleep 10 && ./ga-dashlet.py) &
+    (cd <INSTALL_PATH>/ && sleep 10 && ./ga-dashlet.py) &
 
 Ensure to replace INSTALL_PATH with the correct installation directory!
 
