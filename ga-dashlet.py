@@ -114,6 +114,7 @@ class MyWin (Gtk.Window):
     self.connect("window-state-event", self.window_state_event_cb)
 
     self.show_all()
+    self.set_decorated(False)
     self.get_window().set_decorations(Gdk.WMDecoration.BORDER)
     self.get_window().set_type_hint(Gdk.WindowTypeHint.UTILITY)
 
