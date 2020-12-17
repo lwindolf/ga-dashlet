@@ -130,11 +130,14 @@ class MyWin (Gtk.Window):
     return GLib.build_filenamev((path, 'settings.ini'))
 
   def restore_position(self):
-    k = GLib.KeyFile.new()
-    k.load_from_file(self.get_config_file(), GLib.KeyFileFlags.NONE)
-    self.x = k.get_integer('window', 'x')
-    self.y = k.get_integer('window', 'y')
-    self.move(self.x, self.y)
+    try:
+      k = GLib.KeyFile.new()
+      k.load_from_file(self.get_config_file(), GLib.KeyFileFlags.NONE)
+      self.x = k.get_integer('window', 'x')
+      self.y = k.get_integer('window', 'y')
+      self.move(self.x, self.y)
+    except:
+      print("Cannot restore position")
 
   def save_position(self, x, y):
     k = GLib.KeyFile.new()
