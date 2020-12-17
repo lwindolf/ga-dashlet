@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """Transparent "dashlet" rendering Google Analytics data."""
 
 import httplib2
@@ -126,7 +126,7 @@ class MyWin (Gtk.Window):
 
   def get_config_file(self):
     path = GLib.build_pathv('/', (GLib.get_user_config_dir(), 'ga-dashlet', None))
-    GLib.mkdir_with_parents(path, 0700)
+    GLib.mkdir_with_parents(path, 0o700)
     return GLib.build_filenamev((path, 'settings.ini'))
 
   def restore_position(self):
@@ -176,7 +176,7 @@ class MyWin (Gtk.Window):
           float(self.data['today'].get('rows')[0][1])))
     cr.move_to(18, 52);
     cr.show_text("Yesterday  %6s Views %03.2f EUR" % (
-                self.data['yesterday'].get('rows')[0][0], 
+                self.data['yesterday'].get('rows')[0][0],
           float(self.data['yesterday'].get('rows')[0][1])))
     cr.move_to(18, 66);
     cr.show_text("Last 7days %6s Views %03.2f EUR" % (
