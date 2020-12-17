@@ -1,16 +1,18 @@
 # ga-dashlet
+
 Simple Google Analytics API based live data dashlet
 
 ## Requirements
 
-- Python2
+- Python3
 - GTK 3.20+
 - Composite support (for transparent window)
+- OAuth2Client
 - Google API client
 
-To install the Google API client run
+To install the Python dependencies run
 
-    pip install --upgrade google-api-python-client
+    pip3 install --upgrade google-api-python-client oauth2-client
 
 ## Setup
 
