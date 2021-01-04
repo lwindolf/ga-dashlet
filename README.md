@@ -2,6 +2,8 @@
 
 Simple Google Analytics API based live data dashlet
 
+![Screenshot](screenshot.png)
+
 ## Usage
 
     GDK_BACKEND=x11 ./ga-dashlet.py
